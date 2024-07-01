@@ -9,9 +9,9 @@ library(terra)
 library(flexsdm)
 
 
-## manually importing sv thin
+## Manually importing sv thin
 
-## study area based on the thinne occurences of the snow vole with a 100 km buffer
+## Study area based on the thinned occurrences of the snow vole with a 100 km buffer
 
 studyarea <- calib_area(svthin_thin1, x="decimalLongitude", y="decimalLatitude", method = c('bmcp', width=100000), 
                         groups = NULL, crs ="+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
@@ -30,7 +30,7 @@ writeVector(studyarea, "studar/studarSV_V6.shp", overwrite=T)
 
 
 
-### then study area that can be used to delimit the BV data and have the same buffer in the end. So to say SV study area with 1m width of buffer
+### then study area that can be used to delimit the BV data and have the same buffer. So to say SV study area with 1m width of buffer
 
 studyarea_nobuff <- calib_area(svthin_thin1, x="decimalLongitude", y="decimalLatitude", method = c('bmcp', width=1), 
                         groups = NULL, crs ="+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
